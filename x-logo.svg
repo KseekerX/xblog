@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <defs>
+    <!-- 渐变定义 -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="50%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e0e7ff"/>
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#6366f1" stop-opacity="0"/>
+    </linearGradient>
+    <!-- 发光滤镜 -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- 阴影 -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#6366f1" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- 外层发光圆环 -->
+  <circle cx="60" cy="60" r="52" stroke="url(#glowGrad)" stroke-width="2" fill="none"/>
+  
+  <!-- 渐变背景圆形 -->
+  <circle cx="60" cy="60" r="48" fill="url(#bgGrad)" opacity="0.15"/>
+  
+  <!-- 主 X 造型 - 现代几何设计 -->
+  <g filter="url(#shadow)">
+    <!-- 第一个 X 笔画 (左上到右下) -->
+    <path 
+      d="M38 35 L52 52 L38 69" 
+      stroke="url(#lineGrad)" 
+      stroke-width="5" 
+      stroke-linecap="round" 
+      stroke-linejoin="round" 
+      fill="none"
+    />
+    <!-- 第二个 X 笔画 (右上到左下) -->
+    <path 
+      d="M82 35 L68 52 L82 69" 
+      stroke="url(#lineGrad)" 
+      stroke-width="5" 
+      stroke-linecap="round" 
+      stroke-linejoin="round" 
+      fill="none"
+    />
+  </g>
+  
+  <!-- 中心强调点 -->
+  <circle cx="60" cy="52" r="3" fill="#ffffff" opacity="0.9" filter="url(#glow)"/>
+  
+  <!-- 装饰性小圆点 -->
+  <circle cx="45" cy="42" r="1.5" fill="#c4b5fd" opacity="0.7"/>
+  <circle cx="75" cy="62" r="1.5" fill="#c4b5fd" opacity="0.7"/>
+  <circle cx="48" cy="65" r="1" fill="#a78bfa" opacity="0.5"/>
+  <circle cx="72" cy="38" r="1" fill="#a78bfa" opacity="0.5"/>
+</svg>
